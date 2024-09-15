@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URL,{
    
 
 })
-.then(console.log("connected to MONGO"))
+.then(console.log("connected to MONGu"))
 .catch((err)=>console.log(err));
 
 const storage = multer.diskStorage({
