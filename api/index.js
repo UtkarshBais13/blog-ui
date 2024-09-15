@@ -22,10 +22,11 @@ mongoose.connect('mongodb+srv://utkarshbais899:utkarsh899@cluster0.tfqqlxw.mongo
 .then(console.log("connected to MONGu"))
 .catch((err)=>console.log(err));
 
+
 app.use(cors(
     {
         origin:["https://blog-ui-five.vercel.app"],
-        methods:["POST","GET"],
+        methods:["POST","GET","PUT","DELETE"],
         credentials:true
 
     }
