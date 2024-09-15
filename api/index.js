@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://utkarshbais899:utkarsh899@cluster0.tfqqlxw.mongo
 
 app.use(cors(
     {
-        origin:["https://blog-ui-five.vercel.app"],
+        origin:["https://blog-ui-five.vercel.app/api"],
         methods:["POST","GET","PUT","DELETE"],
         credentials:true
 
