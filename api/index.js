@@ -16,13 +16,23 @@ const path = require("path")
 dotenv.config();
 app.use(express.json());
 app.use("/api/images",express.static(path.join(__dirname,"/images")))
-mongoose.connect(process.env.MONGO_URL,{
+mongoose.connect('mongodb+srv://utkarshbais899:utkarsh899@cluster0.tfqqlxw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{
    
 
 })
 .then(console.log("connected to MONGu"))
 .catch((err)=>console.log(err));
 
+app.use(cors(
+    {
+        origin:[""],
+        methods:["POST","GET"],
+        credentials:true
+
+    }
+))
+
+app.use(express.json())
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,"images")
