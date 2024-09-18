@@ -3,7 +3,7 @@ import Header from "../../header/Header"
 import Posts from "../../posts/Posts"
 import Sidebar from "../../sidebar/Sidebar"
 import"./home.css"
-import axiosInstace from '../../config'
+import {axiosInstace} from '../../config'
 import { useLocation } from "react-router-dom"
 
 function Home() {
