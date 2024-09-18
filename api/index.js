@@ -23,14 +23,14 @@ mongoose.connect('mongodb+srv://utkarshbais899:utkarsh899@cluster0.tfqqlxw.mongo
 .catch((err)=>console.log(err));
 
 
-app.use(cors(
-    {
-        origin:["https://blog-ui-five.vercel.app/api"],
-        methods:["POST","GET","PUT","DELETE"],
-        credentials:true
+// app.use(cors(
+//     {
+//         origin:["https://blog-ui-five.vercel.app/api"],
+//         methods:["POST","GET","PUT","DELETE"],
+//         credentials:true
 
-    }
-))
+//     }
+// ))
 
 app.use(express.json())
 const storage = multer.diskStorage({
