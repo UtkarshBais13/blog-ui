@@ -20,7 +20,7 @@ function Register() {
           password,
         }
       );
-    res.data && window.location.replace("/login")
+    res.data && window.location.reload("/login")
     
     
   } 
