@@ -22,7 +22,11 @@ mongoose.connect('mongodb+srv://utkarshbais899:utkarsh899@cluster0.tfqqlxw.mongo
 .then(console.log("connected to MONGu"))
 .catch((err)=>console.log(err));
 
-
+app.use(cors({
+    origin: 'https://blog-ui-five.vercel.app', // Your frontend domain
+    methods: 'GET,POST,PUT,DELETE', // Specify the HTTP methods allowed
+    credentials: true, // If you need to send cookies or credentials
+  }));
 // app.use(cors(
 //     {
 //         origin:["https://blog-ui-five.vercel.app/api"],
