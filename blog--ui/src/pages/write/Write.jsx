@@ -3,8 +3,10 @@ import "./write.css";
 import axios from "axios";
 import { Context } from "../../contest/Context";
 import { axiosInstance } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 export default function Write() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
@@ -36,7 +38,7 @@ export default function Write() {
     
     try {
       const res = await axiosInstance.post("api/posts", newPost);
-      window.location.replace("/");
+      navigate(`/post/${res.data._id}`, { replace: true });
     } catch (err) {}
   };
   return (
