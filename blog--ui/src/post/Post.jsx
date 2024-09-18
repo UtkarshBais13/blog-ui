@@ -14,16 +14,14 @@ export default function Post({post}) {
      />}   </Link>
      
       <div className="postInfo">
-        <div className="postCats">
-          {post.categories.map((c)=>(
-         <span className="postCat">
+       <div className="postCats">
+  {post.categories.map((c) => (
+    <span key={c._id} className="postCat">
+      {c.name}
+    </span>
+  ))}
+</div>
 
-         {c.name}
-          </span>
-          ))}
-          
-         
-        </div>
         <Link to={`/post/${post._id}`} className="link">
         <span className="postTitle">
         {post.title}
