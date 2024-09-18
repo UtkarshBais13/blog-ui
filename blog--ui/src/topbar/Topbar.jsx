@@ -41,7 +41,9 @@ export default function TopBar() {
               WRITE
             </Link>
           </li>
-          
+          <li className="topListItem" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </li>
         </ul>
       </div>
       <div className="topRight">
@@ -65,9 +67,6 @@ export default function TopBar() {
                 REGISTER
               </Link>
             </li>
-            <li className="topListItem" onClick={handleLogout}>
-            {user && "LOGOUT"}
-          </li>
           </ul>
         )}
         <i className="topSearchIcon fas fa-search"></i>
