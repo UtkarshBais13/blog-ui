@@ -36,7 +36,7 @@ export default function Write() {
     
     try {
       const res = await axiosInstance.post("api/posts", newPost);
-      window.location.reload("/post/" + res.data._id);
+      window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
   return (
