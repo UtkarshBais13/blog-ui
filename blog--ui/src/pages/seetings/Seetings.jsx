@@ -3,6 +3,7 @@ import Sidebar from "../../sidebar/Sidebar"
 import { useContext, useState } from "react"
 import {Context} from "../../contest/Context"
 import axios from "axios"
+import { axiosInstance } from "../../config"
 export default function Settings() {
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
@@ -32,13 +33,13 @@ export default function Settings() {
       data.append("cloud_name","doyufvmui")
       
       try {
-       const res =  await axios.post("https://api.cloudinary.com/v1_1/doyufvmui/image/upload", data);
+       const res =  await axiosInstance.post("https://api.cloudinary.com/v1_1/doyufvmui/image/upload", data);
        updatedUser.profilePic = res.data.url;
       } catch (err) {}
       
     }
     try {
-      const res = await axios.put("api/users/" + user._id, updatedUser);
+      const res = await axiosInstance.put("api/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {

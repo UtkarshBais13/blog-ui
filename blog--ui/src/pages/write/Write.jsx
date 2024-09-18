@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./write.css";
 import axios from "axios";
 import { Context } from "../../contest/Context";
+import { axiosInstance } from "../../config";
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -26,7 +27,7 @@ export default function Write() {
       data.append("cloud_name","doyufvmui")
       
       try {
-       const res =  await axios.post("https://api.cloudinary.com/v1_1/doyufvmui/image/upload", data);
+       const res =  await axiosInstance.post("https://api.cloudinary.com/v1_1/doyufvmui/image/upload", data);
        newPost.photo = res.data.url;
       } catch (err) {}
       
@@ -34,7 +35,7 @@ export default function Write() {
    
     
     try {
-      const res = await axios.post("api/posts", newPost);
+      const res = await axiosInstance.post("api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
