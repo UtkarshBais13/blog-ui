@@ -14,7 +14,7 @@ function Home() {
   const fetch = async()=>{
     const res = await axiosInstace.get("api/posts"+search)
     setPosts(res.data)
-    // console.log(res);
+     console.log(res);
     
     
   }
