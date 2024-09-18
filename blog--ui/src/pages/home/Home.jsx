@@ -3,7 +3,7 @@ import Header from "../../header/Header"
 import Posts from "../../posts/Posts"
 import Sidebar from "../../sidebar/Sidebar"
 import"./home.css"
-import {axiosInstace} from '../../config'
+import {axiosInstance} from '../../config'
 import { useLocation } from "react-router-dom"
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
   
  useEffect(()=>{
   const fetch = async()=>{
-    const res = await axiosInstace.get("api/posts"+search)
+    const res = await axiosInstance.get("api/posts"+search)
     setPosts(res.data)
      console.log(res);
     
