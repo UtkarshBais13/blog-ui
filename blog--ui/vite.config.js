@@ -9,7 +9,7 @@ export default defineConfig({
       '/api': {
         target: "https://blog-ui-8.onrender.com/", // Backend server URL
         changeOrigin: true,
-        secure: false, // Set to false if you're working with a local development server without HTTPS
+        secure: true, // Set to false if you're working with a local development server without HTTPS
         // rewrite: (path) => path.replace(/^\/api/, ''), // Optional: Remove '/api' prefix before proxying
       },
     },
