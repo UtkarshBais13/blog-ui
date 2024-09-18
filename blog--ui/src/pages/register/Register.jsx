@@ -1,6 +1,6 @@
 import axios from "axios"
 import "./register.css"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { axiosInstance } from "../../config"
 function Register() {
@@ -8,6 +8,7 @@ function Register() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
   const [error,setError ] = useState(false)
+  const navigate = useNavigate();
 
   const handleSubmit = async(e)=>{
     e.preventDefault();
@@ -20,8 +21,9 @@ function Register() {
           password,
         }
       );
-    res.data && window.location.replace("/login")
-    
+      if (res?.data) {
+        navigate('/login', { replace: true }); // `replace: true` prevents adding to history
+      }
     
   } 
 
