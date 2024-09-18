@@ -41,13 +41,12 @@ export default function TopBar() {
               WRITE
             </Link>
           </li>
-          <li className="topListItem" onClick={handleLogout}>
-            {user && "LOGOUT"}
-          </li>
+         
         </ul>
       </div>
       <div className="topRight">
         {user ? (
+          <>
           <Link to="/settings">
             <img className="topImg" src={PF+user.profilePic}  alt=""
             onError={event => {
@@ -55,6 +54,13 @@ export default function TopBar() {
               event.onerror = null
             }} />
           </Link>
+          <ul className="topList">
+          <li className="topListItem" onClick={handleLogout}>
+          {user && "LOGOUT"}
+        </li>
+        </ul>
+        </>
+          
         ) : (
           <ul className="topList">
             <li className="topListItem">
