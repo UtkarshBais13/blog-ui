@@ -63,7 +63,7 @@ const About = () => {
         </motion.div>
        
         <motion.div className="item" variants={variants}>
-          <h2>Phone</h2>
+          <h2>PHONE</h2>
           <span>+91 6268386445</span>
         </motion.div>
       </motion.div>
