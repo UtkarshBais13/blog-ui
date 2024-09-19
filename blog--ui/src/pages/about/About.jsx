@@ -57,7 +57,7 @@ const About = () => {
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>GET <br></br>IN TOUCH</motion.h1>
         <motion.div className="item" variants={variants}>
-          <h2>Mail</h2><a href="mailto:utkarshbais899@gamil.com">
+          <h2>Mail</h2><a className="email" href="mailto:utkarshbais899@gamil.com">
           <span>utkashbais899@gmail.com</span>
           </a>
         </motion.div>

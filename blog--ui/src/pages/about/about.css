@@ -30,6 +30,10 @@
     }
     item{
       font-family: DM Sans, sans-serif;
+
+      .email{
+        color: white;
+      }
      
 }
     }
