@@ -8,6 +8,8 @@ import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useContext } from "react";
 import { Context, ContextProvider } from "./contest/Context";
+import About from "./pages/about/About";
+import Sidebar from "./sidebar/Sidebar";
 function App() {
   const {user} = useContext(Context) ;
   
@@ -24,6 +26,8 @@ function App() {
       <Route path="/write" element={ user? <Write />:<Login/> }/>
       {/* <Route path="/write" element={  <Write />}/> */}
       <Route path="/settings" element={user ? <Seetings /> : <Login />} />
+      <Route path="/contact" element={ <About/>} />
+      <Route path="/about" element={ <Sidebar/>} />
     </Routes>
   </Router>
   </ContextProvider>
