@@ -31,7 +31,7 @@ const About = () => {
 
     emailjs
       .sendForm(
-        "service_94y20xo",
+        "service_omxwrsh",
         "template_v10u2oh",
         formRef.current,
         "pX_2hasGmGcuvjXIW"
